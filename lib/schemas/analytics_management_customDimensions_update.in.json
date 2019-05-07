@@ -1,0 +1,105 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "customDimensionId": {
+            "required": true,
+            "type": "string"
+        },
+        "ignoreCustomDataSourceLinks": {
+            "type": "boolean",
+            "default": false
+        },
+        "webPropertyId": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "JSON template for Analytics Custom Dimension.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID.",
+                    "type": "string"
+                },
+                "active": {
+                    "description": "Boolean indicating whether the custom dimension is active.",
+                    "type": "boolean"
+                },
+                "created": {
+                    "description": "Time the custom dimension was created.",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Custom dimension ID.",
+                    "type": "string"
+                },
+                "index": {
+                    "description": "Index of the custom dimension.",
+                    "format": "int32",
+                    "readOnly": true,
+                    "type": "integer"
+                },
+                "kind": {
+                    "default": "analytics#customDimension",
+                    "description": "Kind value for a custom dimension. Set to \"analytics#customDimension\". It is a read-only field.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of the custom dimension.",
+                    "type": "string"
+                },
+                "parentLink": {
+                    "description": "Parent link for the custom dimension. Points to the property to which the custom dimension belongs.",
+                    "properties": {
+                        "href": {
+                            "description": "Link to the property to which the custom dimension belongs.",
+                            "type": "string"
+                        },
+                        "type": {
+                            "default": "analytics#webproperty",
+                            "description": "Type of the parent link. Set to \"analytics#webproperty\".",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "scope": {
+                    "description": "Scope of the custom dimension: HIT, SESSION, USER or PRODUCT.",
+                    "type": "string"
+                },
+                "selfLink": {
+                    "description": "Link for the custom dimension",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "updated": {
+                    "description": "Time the custom dimension was last modified.",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "webPropertyId": {
+                    "description": "Property ID.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

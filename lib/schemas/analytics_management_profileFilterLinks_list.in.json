@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "webPropertyId": {
+            "required": true,
+            "type": "string"
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "max_results": {
+            "type": "integer"
+        },
+        "start_index": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
+}

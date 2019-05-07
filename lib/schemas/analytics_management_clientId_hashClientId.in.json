@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "JSON template for a hash Client Id request resource.",
+            "properties": {
+                "clientId": {
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "analytics#hashClientIdRequest",
+                    "type": "string"
+                },
+                "webPropertyId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

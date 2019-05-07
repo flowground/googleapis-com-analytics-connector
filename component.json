@@ -1,0 +1,1546 @@
+{
+    "title": "Google Analytics",
+    "description": "Views and manages your Google Analytics data.",
+    "docsUrl": "https://developers.google.com/analytics/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/analytics/v3/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/analytics/v3",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "analytics_data_ga_get": {
+            "main": "./lib/actions/analytics_data_ga_get.js",
+            "title": "Returns Analytics data for a view (profile).",
+            "description": "Returns Analytics data for a view (profile).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_data_ga_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_data_mcf_get": {
+            "main": "./lib/actions/analytics_data_mcf_get.js",
+            "title": "Returns Analytics Multi-Channel Funnels data for a view (profile).",
+            "description": "Returns Analytics Multi-Channel Funnels data for a view (profile).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_data_mcf_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_data_realtime_get": {
+            "main": "./lib/actions/analytics_data_realtime_get.js",
+            "title": "Returns real time data for a view (profile).",
+            "description": "Returns real time data for a view (profile).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_data_realtime_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_accountSummaries_list": {
+            "main": "./lib/actions/analytics_management_accountSummaries_list.js",
+            "title": "Lists account summaries (lightweight tree comprised of accounts/properties/profiles) to which the user has access.",
+            "description": "Lists account summaries (lightweight tree comprised of accounts/properties/profiles) to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_accountSummaries_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_accounts_list": {
+            "main": "./lib/actions/analytics_management_accounts_list.js",
+            "title": "Lists all accounts to which the user has access.",
+            "description": "Lists all accounts to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_accounts_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_accountUserLinks_list": {
+            "main": "./lib/actions/analytics_management_accountUserLinks_list.js",
+            "title": "Lists account-user links for a given account.",
+            "description": "Lists account-user links for a given account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_accountUserLinks_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_accountUserLinks_insert": {
+            "main": "./lib/actions/analytics_management_accountUserLinks_insert.js",
+            "title": "Adds a new user to the given account.",
+            "description": "Adds a new user to the given account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_accountUserLinks_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_accountUserLinks_delete": {
+            "main": "./lib/actions/analytics_management_accountUserLinks_delete.js",
+            "title": "Removes a user from the given account.",
+            "description": "Removes a user from the given account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_accountUserLinks_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_accountUserLinks_update": {
+            "main": "./lib/actions/analytics_management_accountUserLinks_update.js",
+            "title": "Updates permissions for an existing user on the given account.",
+            "description": "Updates permissions for an existing user on the given account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_accountUserLinks_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_filters_list": {
+            "main": "./lib/actions/analytics_management_filters_list.js",
+            "title": "Lists all filters for an account",
+            "description": "Lists all filters for an account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_filters_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_filters_insert": {
+            "main": "./lib/actions/analytics_management_filters_insert.js",
+            "title": "Create a new filter.",
+            "description": "Create a new filter.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_filters_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_filters_delete": {
+            "main": "./lib/actions/analytics_management_filters_delete.js",
+            "title": "Delete a filter.",
+            "description": "Delete a filter.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_filters_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_filters_get": {
+            "main": "./lib/actions/analytics_management_filters_get.js",
+            "title": "Returns a filters to which the user has access.",
+            "description": "Returns a filters to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_filters_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_filters_patch": {
+            "main": "./lib/actions/analytics_management_filters_patch.js",
+            "title": "Updates an existing filter. This method supports patch semantics.",
+            "description": "Updates an existing filter. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_filters_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_filters_update": {
+            "main": "./lib/actions/analytics_management_filters_update.js",
+            "title": "Updates an existing filter.",
+            "description": "Updates an existing filter.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_filters_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webproperties_list": {
+            "main": "./lib/actions/analytics_management_webproperties_list.js",
+            "title": "Lists web properties to which the user has access.",
+            "description": "Lists web properties to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webproperties_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webproperties_insert": {
+            "main": "./lib/actions/analytics_management_webproperties_insert.js",
+            "title": "Create a new property if the account has fewer than 20 properties. Web properties are visible in the Google Analytics interface only if they have at least one profile.",
+            "description": "Create a new property if the account has fewer than 20 properties. Web properties are visible in the Google Analytics interface only if they have at least one profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webproperties_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webproperties_get": {
+            "main": "./lib/actions/analytics_management_webproperties_get.js",
+            "title": "Gets a web property to which the user has access.",
+            "description": "Gets a web property to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webproperties_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webproperties_patch": {
+            "main": "./lib/actions/analytics_management_webproperties_patch.js",
+            "title": "Updates an existing web property. This method supports patch semantics.",
+            "description": "Updates an existing web property. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webproperties_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webproperties_update": {
+            "main": "./lib/actions/analytics_management_webproperties_update.js",
+            "title": "Updates an existing web property.",
+            "description": "Updates an existing web property.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webproperties_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customDataSources_list": {
+            "main": "./lib/actions/analytics_management_customDataSources_list.js",
+            "title": "List custom data sources to which the user has access.",
+            "description": "List custom data sources to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customDataSources_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_uploads_deleteUploadData": {
+            "main": "./lib/actions/analytics_management_uploads_deleteUploadData.js",
+            "title": "Delete data associated with a previous upload.",
+            "description": "Delete data associated with a previous upload.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_uploads_deleteUploadData.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_uploads_list": {
+            "main": "./lib/actions/analytics_management_uploads_list.js",
+            "title": "List uploads to which the user has access.",
+            "description": "List uploads to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_uploads_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_uploads_uploadData": {
+            "main": "./lib/actions/analytics_management_uploads_uploadData.js",
+            "title": "Upload data for a custom data source.",
+            "description": "Upload data for a custom data source.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_uploads_uploadData.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_uploads_get": {
+            "main": "./lib/actions/analytics_management_uploads_get.js",
+            "title": "List uploads to which the user has access.",
+            "description": "List uploads to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_uploads_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customDimensions_list": {
+            "main": "./lib/actions/analytics_management_customDimensions_list.js",
+            "title": "Lists custom dimensions to which the user has access.",
+            "description": "Lists custom dimensions to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customDimensions_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customDimensions_insert": {
+            "main": "./lib/actions/analytics_management_customDimensions_insert.js",
+            "title": "Create a new custom dimension.",
+            "description": "Create a new custom dimension.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customDimensions_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customDimensions_get": {
+            "main": "./lib/actions/analytics_management_customDimensions_get.js",
+            "title": "Get a custom dimension to which the user has access.",
+            "description": "Get a custom dimension to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customDimensions_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customDimensions_patch": {
+            "main": "./lib/actions/analytics_management_customDimensions_patch.js",
+            "title": "Updates an existing custom dimension. This method supports patch semantics.",
+            "description": "Updates an existing custom dimension. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customDimensions_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customDimensions_update": {
+            "main": "./lib/actions/analytics_management_customDimensions_update.js",
+            "title": "Updates an existing custom dimension.",
+            "description": "Updates an existing custom dimension.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customDimensions_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customMetrics_list": {
+            "main": "./lib/actions/analytics_management_customMetrics_list.js",
+            "title": "Lists custom metrics to which the user has access.",
+            "description": "Lists custom metrics to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customMetrics_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customMetrics_insert": {
+            "main": "./lib/actions/analytics_management_customMetrics_insert.js",
+            "title": "Create a new custom metric.",
+            "description": "Create a new custom metric.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customMetrics_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customMetrics_get": {
+            "main": "./lib/actions/analytics_management_customMetrics_get.js",
+            "title": "Get a custom metric to which the user has access.",
+            "description": "Get a custom metric to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customMetrics_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customMetrics_patch": {
+            "main": "./lib/actions/analytics_management_customMetrics_patch.js",
+            "title": "Updates an existing custom metric. This method supports patch semantics.",
+            "description": "Updates an existing custom metric. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customMetrics_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_customMetrics_update": {
+            "main": "./lib/actions/analytics_management_customMetrics_update.js",
+            "title": "Updates an existing custom metric.",
+            "description": "Updates an existing custom metric.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_customMetrics_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webPropertyAdWordsLinks_list": {
+            "main": "./lib/actions/analytics_management_webPropertyAdWordsLinks_list.js",
+            "title": "Lists webProperty-Google Ads links for a given web property.",
+            "description": "Lists webProperty-Google Ads links for a given web property.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webPropertyAdWordsLinks_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webPropertyAdWordsLinks_insert": {
+            "main": "./lib/actions/analytics_management_webPropertyAdWordsLinks_insert.js",
+            "title": "Creates a webProperty-Google Ads link.",
+            "description": "Creates a webProperty-Google Ads link.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webPropertyAdWordsLinks_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webPropertyAdWordsLinks_delete": {
+            "main": "./lib/actions/analytics_management_webPropertyAdWordsLinks_delete.js",
+            "title": "Deletes a web property-Google Ads link.",
+            "description": "Deletes a web property-Google Ads link.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webPropertyAdWordsLinks_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webPropertyAdWordsLinks_get": {
+            "main": "./lib/actions/analytics_management_webPropertyAdWordsLinks_get.js",
+            "title": "Returns a web property-Google Ads link to which the user has access.",
+            "description": "Returns a web property-Google Ads link to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webPropertyAdWordsLinks_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webPropertyAdWordsLinks_patch": {
+            "main": "./lib/actions/analytics_management_webPropertyAdWordsLinks_patch.js",
+            "title": "Updates an existing webProperty-Google Ads link. This method supports patch semantics.",
+            "description": "Updates an existing webProperty-Google Ads link. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webPropertyAdWordsLinks_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webPropertyAdWordsLinks_update": {
+            "main": "./lib/actions/analytics_management_webPropertyAdWordsLinks_update.js",
+            "title": "Updates an existing webProperty-Google Ads link.",
+            "description": "Updates an existing webProperty-Google Ads link.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webPropertyAdWordsLinks_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webpropertyUserLinks_list": {
+            "main": "./lib/actions/analytics_management_webpropertyUserLinks_list.js",
+            "title": "Lists webProperty-user links for a given web property.",
+            "description": "Lists webProperty-user links for a given web property.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webpropertyUserLinks_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webpropertyUserLinks_insert": {
+            "main": "./lib/actions/analytics_management_webpropertyUserLinks_insert.js",
+            "title": "Adds a new user to the given web property.",
+            "description": "Adds a new user to the given web property.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webpropertyUserLinks_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webpropertyUserLinks_delete": {
+            "main": "./lib/actions/analytics_management_webpropertyUserLinks_delete.js",
+            "title": "Removes a user from the given web property.",
+            "description": "Removes a user from the given web property.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webpropertyUserLinks_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_webpropertyUserLinks_update": {
+            "main": "./lib/actions/analytics_management_webpropertyUserLinks_update.js",
+            "title": "Updates permissions for an existing user on the given web property.",
+            "description": "Updates permissions for an existing user on the given web property.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_webpropertyUserLinks_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profiles_list": {
+            "main": "./lib/actions/analytics_management_profiles_list.js",
+            "title": "Lists views (profiles) to which the user has access.",
+            "description": "Lists views (profiles) to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profiles_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profiles_insert": {
+            "main": "./lib/actions/analytics_management_profiles_insert.js",
+            "title": "Create a new view (profile).",
+            "description": "Create a new view (profile).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profiles_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profiles_delete": {
+            "main": "./lib/actions/analytics_management_profiles_delete.js",
+            "title": "Deletes a view (profile).",
+            "description": "Deletes a view (profile).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profiles_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profiles_get": {
+            "main": "./lib/actions/analytics_management_profiles_get.js",
+            "title": "Gets a view (profile) to which the user has access.",
+            "description": "Gets a view (profile) to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profiles_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profiles_patch": {
+            "main": "./lib/actions/analytics_management_profiles_patch.js",
+            "title": "Updates an existing view (profile). This method supports patch semantics.",
+            "description": "Updates an existing view (profile). This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profiles_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profiles_update": {
+            "main": "./lib/actions/analytics_management_profiles_update.js",
+            "title": "Updates an existing view (profile).",
+            "description": "Updates an existing view (profile).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profiles_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profileUserLinks_list": {
+            "main": "./lib/actions/analytics_management_profileUserLinks_list.js",
+            "title": "Lists profile-user links for a given view (profile).",
+            "description": "Lists profile-user links for a given view (profile).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profileUserLinks_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profileUserLinks_insert": {
+            "main": "./lib/actions/analytics_management_profileUserLinks_insert.js",
+            "title": "Adds a new user to the given view (profile).",
+            "description": "Adds a new user to the given view (profile).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profileUserLinks_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profileUserLinks_delete": {
+            "main": "./lib/actions/analytics_management_profileUserLinks_delete.js",
+            "title": "Removes a user from the given view (profile).",
+            "description": "Removes a user from the given view (profile).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profileUserLinks_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profileUserLinks_update": {
+            "main": "./lib/actions/analytics_management_profileUserLinks_update.js",
+            "title": "Updates permissions for an existing user on the given view (profile).",
+            "description": "Updates permissions for an existing user on the given view (profile).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profileUserLinks_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_experiments_list": {
+            "main": "./lib/actions/analytics_management_experiments_list.js",
+            "title": "Lists experiments to which the user has access.",
+            "description": "Lists experiments to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_experiments_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_experiments_insert": {
+            "main": "./lib/actions/analytics_management_experiments_insert.js",
+            "title": "Create a new experiment.",
+            "description": "Create a new experiment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_experiments_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_experiments_delete": {
+            "main": "./lib/actions/analytics_management_experiments_delete.js",
+            "title": "Delete an experiment.",
+            "description": "Delete an experiment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_experiments_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_experiments_get": {
+            "main": "./lib/actions/analytics_management_experiments_get.js",
+            "title": "Returns an experiment to which the user has access.",
+            "description": "Returns an experiment to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_experiments_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_experiments_patch": {
+            "main": "./lib/actions/analytics_management_experiments_patch.js",
+            "title": "Update an existing experiment. This method supports patch semantics.",
+            "description": "Update an existing experiment. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_experiments_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_experiments_update": {
+            "main": "./lib/actions/analytics_management_experiments_update.js",
+            "title": "Update an existing experiment.",
+            "description": "Update an existing experiment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_experiments_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_goals_list": {
+            "main": "./lib/actions/analytics_management_goals_list.js",
+            "title": "Lists goals to which the user has access.",
+            "description": "Lists goals to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_goals_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_goals_insert": {
+            "main": "./lib/actions/analytics_management_goals_insert.js",
+            "title": "Create a new goal.",
+            "description": "Create a new goal.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_goals_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_goals_get": {
+            "main": "./lib/actions/analytics_management_goals_get.js",
+            "title": "Gets a goal to which the user has access.",
+            "description": "Gets a goal to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_goals_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_goals_patch": {
+            "main": "./lib/actions/analytics_management_goals_patch.js",
+            "title": "Updates an existing goal. This method supports patch semantics.",
+            "description": "Updates an existing goal. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_goals_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_goals_update": {
+            "main": "./lib/actions/analytics_management_goals_update.js",
+            "title": "Updates an existing goal.",
+            "description": "Updates an existing goal.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_goals_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profileFilterLinks_list": {
+            "main": "./lib/actions/analytics_management_profileFilterLinks_list.js",
+            "title": "Lists all profile filter links for a profile.",
+            "description": "Lists all profile filter links for a profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profileFilterLinks_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profileFilterLinks_insert": {
+            "main": "./lib/actions/analytics_management_profileFilterLinks_insert.js",
+            "title": "Create a new profile filter link.",
+            "description": "Create a new profile filter link.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profileFilterLinks_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profileFilterLinks_delete": {
+            "main": "./lib/actions/analytics_management_profileFilterLinks_delete.js",
+            "title": "Delete a profile filter link.",
+            "description": "Delete a profile filter link.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profileFilterLinks_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profileFilterLinks_get": {
+            "main": "./lib/actions/analytics_management_profileFilterLinks_get.js",
+            "title": "Returns a single profile filter link.",
+            "description": "Returns a single profile filter link.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profileFilterLinks_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profileFilterLinks_patch": {
+            "main": "./lib/actions/analytics_management_profileFilterLinks_patch.js",
+            "title": "Update an existing profile filter link. This method supports patch semantics.",
+            "description": "Update an existing profile filter link. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profileFilterLinks_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_profileFilterLinks_update": {
+            "main": "./lib/actions/analytics_management_profileFilterLinks_update.js",
+            "title": "Update an existing profile filter link.",
+            "description": "Update an existing profile filter link.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_profileFilterLinks_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_unsampledReports_list": {
+            "main": "./lib/actions/analytics_management_unsampledReports_list.js",
+            "title": "Lists unsampled reports to which the user has access.",
+            "description": "Lists unsampled reports to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_unsampledReports_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_unsampledReports_insert": {
+            "main": "./lib/actions/analytics_management_unsampledReports_insert.js",
+            "title": "Create a new unsampled report.",
+            "description": "Create a new unsampled report.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_unsampledReports_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_unsampledReports_delete": {
+            "main": "./lib/actions/analytics_management_unsampledReports_delete.js",
+            "title": "Deletes an unsampled report.",
+            "description": "Deletes an unsampled report.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_unsampledReports_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_unsampledReports_get": {
+            "main": "./lib/actions/analytics_management_unsampledReports_get.js",
+            "title": "Returns a single unsampled report.",
+            "description": "Returns a single unsampled report.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_unsampledReports_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_remarketingAudience_list": {
+            "main": "./lib/actions/analytics_management_remarketingAudience_list.js",
+            "title": "Lists remarketing audiences to which the user has access.",
+            "description": "Lists remarketing audiences to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_remarketingAudience_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_remarketingAudience_insert": {
+            "main": "./lib/actions/analytics_management_remarketingAudience_insert.js",
+            "title": "Creates a new remarketing audience.",
+            "description": "Creates a new remarketing audience.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_remarketingAudience_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_remarketingAudience_delete": {
+            "main": "./lib/actions/analytics_management_remarketingAudience_delete.js",
+            "title": "Delete a remarketing audience.",
+            "description": "Delete a remarketing audience.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_remarketingAudience_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_remarketingAudience_get": {
+            "main": "./lib/actions/analytics_management_remarketingAudience_get.js",
+            "title": "Gets a remarketing audience to which the user has access.",
+            "description": "Gets a remarketing audience to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_remarketingAudience_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_remarketingAudience_patch": {
+            "main": "./lib/actions/analytics_management_remarketingAudience_patch.js",
+            "title": "Updates an existing remarketing audience. This method supports patch semantics.",
+            "description": "Updates an existing remarketing audience. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_remarketingAudience_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_remarketingAudience_update": {
+            "main": "./lib/actions/analytics_management_remarketingAudience_update.js",
+            "title": "Updates an existing remarketing audience.",
+            "description": "Updates an existing remarketing audience.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_remarketingAudience_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_clientId_hashClientId": {
+            "main": "./lib/actions/analytics_management_clientId_hashClientId.js",
+            "title": "Hashes the given Client ID.",
+            "description": "Hashes the given Client ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_clientId_hashClientId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_management_segments_list": {
+            "main": "./lib/actions/analytics_management_segments_list.js",
+            "title": "Lists segments to which the user has access.",
+            "description": "Lists segments to which the user has access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_management_segments_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_metadata_columns_list": {
+            "main": "./lib/actions/analytics_metadata_columns_list.js",
+            "title": "Lists all columns for a report type",
+            "description": "Lists all columns for a report type",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_metadata_columns_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_provisioning_createAccountTicket": {
+            "main": "./lib/actions/analytics_provisioning_createAccountTicket.js",
+            "title": "Creates an account ticket.",
+            "description": "Creates an account ticket.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_provisioning_createAccountTicket.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_provisioning_createAccountTree": {
+            "main": "./lib/actions/analytics_provisioning_createAccountTree.js",
+            "title": "Provision account.",
+            "description": "Provision account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_provisioning_createAccountTree.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "analytics_userDeletion_userDeletionRequest_upsert": {
+            "main": "./lib/actions/analytics_userDeletion_userDeletionRequest_upsert.js",
+            "title": "Insert or update a user deletion requests.",
+            "description": "Insert or update a user deletion requests.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/analytics_userDeletion_userDeletionRequest_upsert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,393 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "JSON template for an Analytics account ticket. The account ticket consists of the ticket ID and the basic information for the account, property and profile.",
+            "properties": {
+                "account": {
+                    "description": "Account for this ticket.",
+                    "properties": {
+                        "childLink": {
+                            "description": "Child link for an account entry. Points to the list of web properties for this account.",
+                            "properties": {
+                                "href": {
+                                    "description": "Link to the list of web properties for this account.",
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "default": "analytics#webproperties",
+                                    "description": "Type of the child link. Its value is \"analytics#webproperties\".",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "created": {
+                            "description": "Time the account was created.",
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "Account ID.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "analytics#account",
+                            "description": "Resource type for Analytics account.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Account name.",
+                            "type": "string"
+                        },
+                        "permissions": {
+                            "description": "Permissions the user has for this account.",
+                            "properties": {
+                                "effective": {
+                                    "description": "All the permissions that the user has for this account. These include any implied permissions (e.g., EDIT implies VIEW).",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "readOnly": true,
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "selfLink": {
+                            "description": "Link for this account.",
+                            "type": "string"
+                        },
+                        "starred": {
+                            "description": "Indicates whether this account is starred or not.",
+                            "type": "boolean"
+                        },
+                        "updated": {
+                            "description": "Time the account was last modified.",
+                            "format": "date-time",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "description": "Account ticket ID used to access the account ticket.",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "analytics#accountTicket",
+                    "description": "Resource type for account ticket.",
+                    "type": "string"
+                },
+                "profile": {
+                    "description": "View (Profile) for the account.",
+                    "properties": {
+                        "accountId": {
+                            "description": "Account ID to which this view (profile) belongs.",
+                            "type": "string"
+                        },
+                        "botFilteringEnabled": {
+                            "description": "Indicates whether bot filtering is enabled for this view (profile).",
+                            "type": "boolean"
+                        },
+                        "childLink": {
+                            "description": "Child link for this view (profile). Points to the list of goals for this view (profile).",
+                            "properties": {
+                                "href": {
+                                    "description": "Link to the list of goals for this view (profile).",
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "default": "analytics#goals",
+                                    "description": "Value is \"analytics#goals\".",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "created": {
+                            "description": "Time this view (profile) was created.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "currency": {
+                            "description": "The currency type associated with this view (profile), defaults to USD. The supported values are:\nUSD, JPY, EUR, GBP, AUD, KRW, BRL, CNY, DKK, RUB, SEK, NOK, PLN, TRY, TWD, HKD, THB, IDR, ARS, MXN, VND, PHP, INR, CHF, CAD, CZK, NZD, HUF, BGN, LTL, ZAR, UAH, AED, BOB, CLP, COP, EGP, HRK, ILS, MAD, MYR, PEN, PKR, RON, RSD, SAR, SGD, VEF, LVL",
+                            "type": "string"
+                        },
+                        "defaultPage": {
+                            "description": "Default page for this view (profile).",
+                            "type": "string"
+                        },
+                        "eCommerceTracking": {
+                            "description": "Indicates whether ecommerce tracking is enabled for this view (profile).",
+                            "type": "boolean"
+                        },
+                        "enhancedECommerceTracking": {
+                            "description": "Indicates whether enhanced ecommerce tracking is enabled for this view (profile). This property can only be enabled if ecommerce tracking is enabled.",
+                            "type": "boolean"
+                        },
+                        "excludeQueryParameters": {
+                            "description": "The query parameters that are excluded from this view (profile).",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "View (Profile) ID.",
+                            "type": "string"
+                        },
+                        "internalWebPropertyId": {
+                            "description": "Internal ID for the web property to which this view (profile) belongs.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "analytics#profile",
+                            "description": "Resource type for Analytics view (profile).",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Name of this view (profile).",
+                            "type": "string"
+                        },
+                        "parentLink": {
+                            "description": "Parent link for this view (profile). Points to the web property to which this view (profile) belongs.",
+                            "properties": {
+                                "href": {
+                                    "description": "Link to the web property to which this view (profile) belongs.",
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "default": "analytics#webproperty",
+                                    "description": "Value is \"analytics#webproperty\".",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "permissions": {
+                            "description": "Permissions the user has for this view (profile).",
+                            "properties": {
+                                "effective": {
+                                    "description": "All the permissions that the user has for this view (profile). These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent web property.",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "readOnly": true,
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "selfLink": {
+                            "description": "Link for this view (profile).",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "siteSearchCategoryParameters": {
+                            "description": "Site search category parameters for this view (profile).",
+                            "type": "string"
+                        },
+                        "siteSearchQueryParameters": {
+                            "description": "The site search query parameters for this view (profile).",
+                            "type": "string"
+                        },
+                        "starred": {
+                            "description": "Indicates whether this view (profile) is starred or not.",
+                            "type": "boolean"
+                        },
+                        "stripSiteSearchCategoryParameters": {
+                            "description": "Whether or not Analytics will strip search category parameters from the URLs in your reports.",
+                            "type": "boolean"
+                        },
+                        "stripSiteSearchQueryParameters": {
+                            "description": "Whether or not Analytics will strip search query parameters from the URLs in your reports.",
+                            "type": "boolean"
+                        },
+                        "timezone": {
+                            "description": "Time zone for which this view (profile) has been configured. Time zones are identified by strings from the TZ database.",
+                            "type": "string"
+                        },
+                        "type": {
+                            "description": "View (Profile) type. Supported types: WEB or APP.",
+                            "type": "string"
+                        },
+                        "updated": {
+                            "description": "Time this view (profile) was last modified.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "webPropertyId": {
+                            "description": "Web property ID of the form UA-XXXXX-YY to which this view (profile) belongs.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "websiteUrl": {
+                            "description": "Website URL for this view (profile).",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "redirectUri": {
+                    "description": "Redirect URI where the user will be sent after accepting Terms of Service. Must be configured in APIs console as a callback URL.",
+                    "type": "string"
+                },
+                "webproperty": {
+                    "description": "Web property for the account.",
+                    "properties": {
+                        "accountId": {
+                            "description": "Account ID to which this web property belongs.",
+                            "type": "string"
+                        },
+                        "childLink": {
+                            "description": "Child link for this web property. Points to the list of views (profiles) for this web property.",
+                            "properties": {
+                                "href": {
+                                    "description": "Link to the list of views (profiles) for this web property.",
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "default": "analytics#profiles",
+                                    "description": "Type of the parent link. Its value is \"analytics#profiles\".",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "created": {
+                            "description": "Time this web property was created.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "dataRetentionResetOnNewActivity": {
+                            "description": "Set to true to reset the retention period of the user identifier with each new event from that user (thus setting the expiration date to current time plus retention period).\nSet to false to delete data associated with the user identifer automatically after the rentention period.\nThis property cannot be set on insert.",
+                            "type": "boolean"
+                        },
+                        "dataRetentionTtl": {
+                            "description": "The length of time for which user and event data is retained.\nThis property cannot be set on insert.",
+                            "type": "string"
+                        },
+                        "defaultProfileId": {
+                            "description": "Default view (profile) ID.",
+                            "format": "int64",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "Web property ID of the form UA-XXXXX-YY.",
+                            "type": "string"
+                        },
+                        "industryVertical": {
+                            "description": "The industry vertical/category selected for this web property.",
+                            "type": "string"
+                        },
+                        "internalWebPropertyId": {
+                            "description": "Internal ID for this web property.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "analytics#webproperty",
+                            "description": "Resource type for Analytics WebProperty.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "level": {
+                            "description": "Level for this web property. Possible values are STANDARD or PREMIUM.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Name of this web property.",
+                            "type": "string"
+                        },
+                        "parentLink": {
+                            "description": "Parent link for this web property. Points to the account to which this web property belongs.",
+                            "properties": {
+                                "href": {
+                                    "description": "Link to the account for this web property.",
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "default": "analytics#account",
+                                    "description": "Type of the parent link. Its value is \"analytics#account\".",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "permissions": {
+                            "description": "Permissions the user has for this web property.",
+                            "properties": {
+                                "effective": {
+                                    "description": "All the permissions that the user has for this web property. These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent account.",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "readOnly": true,
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "profileCount": {
+                            "description": "View (Profile) count for this web property.",
+                            "format": "int32",
+                            "readOnly": true,
+                            "type": "integer"
+                        },
+                        "selfLink": {
+                            "description": "Link for this web property.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "starred": {
+                            "description": "Indicates whether this web property is starred or not.",
+                            "type": "boolean"
+                        },
+                        "updated": {
+                            "description": "Time this web property was last modified.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "websiteUrl": {
+                            "description": "Website url for this web property.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

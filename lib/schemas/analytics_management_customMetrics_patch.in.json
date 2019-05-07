@@ -1,0 +1,117 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "customMetricId": {
+            "required": true,
+            "type": "string"
+        },
+        "ignoreCustomDataSourceLinks": {
+            "type": "boolean",
+            "default": false
+        },
+        "webPropertyId": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "JSON template for Analytics Custom Metric.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID.",
+                    "type": "string"
+                },
+                "active": {
+                    "description": "Boolean indicating whether the custom metric is active.",
+                    "type": "boolean"
+                },
+                "created": {
+                    "description": "Time the custom metric was created.",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Custom metric ID.",
+                    "type": "string"
+                },
+                "index": {
+                    "description": "Index of the custom metric.",
+                    "format": "int32",
+                    "readOnly": true,
+                    "type": "integer"
+                },
+                "kind": {
+                    "default": "analytics#customMetric",
+                    "description": "Kind value for a custom metric. Set to \"analytics#customMetric\". It is a read-only field.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "max_value": {
+                    "description": "Max value of custom metric.",
+                    "type": "string"
+                },
+                "min_value": {
+                    "description": "Min value of custom metric.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of the custom metric.",
+                    "type": "string"
+                },
+                "parentLink": {
+                    "description": "Parent link for the custom metric. Points to the property to which the custom metric belongs.",
+                    "properties": {
+                        "href": {
+                            "description": "Link to the property to which the custom metric belongs.",
+                            "type": "string"
+                        },
+                        "type": {
+                            "default": "analytics#webproperty",
+                            "description": "Type of the parent link. Set to \"analytics#webproperty\".",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "scope": {
+                    "description": "Scope of the custom metric: HIT or PRODUCT.",
+                    "type": "string"
+                },
+                "selfLink": {
+                    "description": "Link for the custom metric",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Data type of custom metric.",
+                    "type": "string"
+                },
+                "updated": {
+                    "description": "Time the custom metric was last modified.",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "webPropertyId": {
+                    "description": "Property ID.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

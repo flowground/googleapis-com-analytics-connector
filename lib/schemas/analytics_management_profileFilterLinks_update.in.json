@@ -1,0 +1,121 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "linkId": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "webPropertyId": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "JSON template for an Analytics profile filter link.",
+            "properties": {
+                "filterRef": {
+                    "description": "Filter for this link.",
+                    "properties": {
+                        "accountId": {
+                            "description": "Account ID to which this filter belongs.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "href": {
+                            "description": "Link for this filter.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "Filter ID.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "analytics#filterRef",
+                            "description": "Kind value for filter reference.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Name of this filter.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "description": "Profile filter link ID.",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "analytics#profileFilterLink",
+                    "description": "Resource type for Analytics filter.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "profileRef": {
+                    "description": "View (Profile) for this link.",
+                    "properties": {
+                        "accountId": {
+                            "description": "Account ID to which this view (profile) belongs.",
+                            "type": "string"
+                        },
+                        "href": {
+                            "description": "Link for this view (profile).",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "View (Profile) ID.",
+                            "type": "string"
+                        },
+                        "internalWebPropertyId": {
+                            "description": "Internal ID for the web property to which this view (profile) belongs.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "analytics#profileRef",
+                            "description": "Analytics view (profile) reference.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Name of this view (profile).",
+                            "type": "string"
+                        },
+                        "webPropertyId": {
+                            "description": "Web property ID of the form UA-XXXXX-YY to which this view (profile) belongs.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "rank": {
+                    "description": "The rank of this profile filter link relative to the other filters linked to the same profile.\nFor readonly (i.e., list and get) operations, the rank always starts at 1.\nFor write (i.e., create, update, or delete) operations, you may specify a value between 0 and 255 inclusively, [0, 255]. In order to insert a link at the end of the list, either don't specify a rank or set a rank to a number greater than the largest rank in the list. In order to insert a link to the beginning of the list specify a rank that is less than or equal to 1. The new link will move all existing filters with the same or lower rank down the list. After the link is inserted/updated/deleted all profile filter links will be renumbered starting at 1.",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "selfLink": {
+                    "description": "Link for this profile filter link.",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

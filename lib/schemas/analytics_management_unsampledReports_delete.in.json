@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "unsampledReportId": {
+            "required": true,
+            "type": "string"
+        },
+        "webPropertyId": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

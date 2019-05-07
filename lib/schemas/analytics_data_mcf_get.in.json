@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+        "dimensions": {
+            "type": "string"
+        },
+        "filters": {
+            "type": "string"
+        },
+        "ids": {
+            "required": true,
+            "type": "string"
+        },
+        "metrics": {
+            "required": true,
+            "type": "string"
+        },
+        "samplingLevel": {
+            "type": "string",
+            "enum": [
+                "DEFAULT",
+                "FASTER",
+                "HIGHER_PRECISION"
+            ]
+        },
+        "sort": {
+            "type": "string"
+        },
+        "end_date": {
+            "required": true,
+            "type": "string"
+        },
+        "max_results": {
+            "type": "integer"
+        },
+        "start_date": {
+            "required": true,
+            "type": "string"
+        },
+        "start_index": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
+}

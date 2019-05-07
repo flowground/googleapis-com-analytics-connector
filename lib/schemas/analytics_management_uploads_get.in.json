@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "customDataSourceId": {
+            "required": true,
+            "type": "string"
+        },
+        "uploadId": {
+            "required": true,
+            "type": "string"
+        },
+        "webPropertyId": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

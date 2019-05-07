@@ -1,0 +1,154 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "JSON template for an Analytics web property.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID to which this web property belongs.",
+                    "type": "string"
+                },
+                "childLink": {
+                    "description": "Child link for this web property. Points to the list of views (profiles) for this web property.",
+                    "properties": {
+                        "href": {
+                            "description": "Link to the list of views (profiles) for this web property.",
+                            "type": "string"
+                        },
+                        "type": {
+                            "default": "analytics#profiles",
+                            "description": "Type of the parent link. Its value is \"analytics#profiles\".",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "created": {
+                    "description": "Time this web property was created.",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "dataRetentionResetOnNewActivity": {
+                    "description": "Set to true to reset the retention period of the user identifier with each new event from that user (thus setting the expiration date to current time plus retention period).\nSet to false to delete data associated with the user identifer automatically after the rentention period.\nThis property cannot be set on insert.",
+                    "type": "boolean"
+                },
+                "dataRetentionTtl": {
+                    "description": "The length of time for which user and event data is retained.\nThis property cannot be set on insert.",
+                    "type": "string"
+                },
+                "defaultProfileId": {
+                    "description": "Default view (profile) ID.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Web property ID of the form UA-XXXXX-YY.",
+                    "type": "string"
+                },
+                "industryVertical": {
+                    "description": "The industry vertical/category selected for this web property.",
+                    "type": "string"
+                },
+                "internalWebPropertyId": {
+                    "description": "Internal ID for this web property.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "analytics#webproperty",
+                    "description": "Resource type for Analytics WebProperty.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "level": {
+                    "description": "Level for this web property. Possible values are STANDARD or PREMIUM.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of this web property.",
+                    "type": "string"
+                },
+                "parentLink": {
+                    "description": "Parent link for this web property. Points to the account to which this web property belongs.",
+                    "properties": {
+                        "href": {
+                            "description": "Link to the account for this web property.",
+                            "type": "string"
+                        },
+                        "type": {
+                            "default": "analytics#account",
+                            "description": "Type of the parent link. Its value is \"analytics#account\".",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "permissions": {
+                    "description": "Permissions the user has for this web property.",
+                    "properties": {
+                        "effective": {
+                            "description": "All the permissions that the user has for this web property. These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent account.",
+                            "items": {
+                                "type": "string"
+                            },
+                            "readOnly": true,
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "profileCount": {
+                    "description": "View (Profile) count for this web property.",
+                    "format": "int32",
+                    "readOnly": true,
+                    "type": "integer"
+                },
+                "selfLink": {
+                    "description": "Link for this web property.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "starred": {
+                    "description": "Indicates whether this web property is starred or not.",
+                    "type": "boolean"
+                },
+                "updated": {
+                    "description": "Time this web property was last modified.",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "websiteUrl": {
+                    "description": "Website url for this web property.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

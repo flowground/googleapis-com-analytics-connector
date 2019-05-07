@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "JSON template for a user deletion request resource.",
+            "properties": {
+                "deletionRequestTime": {
+                    "description": "This marks the point in time for which all user data before should be deleted",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "firebaseProjectId": {
+                    "description": "Firebase Project Id",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "User ID.",
+                    "properties": {
+                        "type": {
+                            "description": "Type of user",
+                            "type": "string"
+                        },
+                        "userId": {
+                            "description": "The User's id",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "kind": {
+                    "default": "analytics#userDeletionRequest",
+                    "description": "Value is \"analytics#userDeletionRequest\".",
+                    "type": "string"
+                },
+                "webPropertyId": {
+                    "description": "Web property ID of the form UA-XXXXX-YY.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

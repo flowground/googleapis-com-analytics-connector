@@ -1,0 +1,57 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "JSON template for an Analytics account tree requests. The account tree request is used in the provisioning api to create an account, property, and view (profile). It contains the basic information required to make these fields.",
+            "properties": {
+                "accountName": {
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "analytics#accountTreeRequest",
+                    "description": "Resource type for account ticket.",
+                    "type": "string"
+                },
+                "profileName": {
+                    "type": "string"
+                },
+                "timezone": {
+                    "type": "string"
+                },
+                "webpropertyName": {
+                    "type": "string"
+                },
+                "websiteUrl": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

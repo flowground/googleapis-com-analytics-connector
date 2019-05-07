@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "dimensions": {
+            "type": "string"
+        },
+        "filters": {
+            "type": "string"
+        },
+        "ids": {
+            "required": true,
+            "type": "string"
+        },
+        "metrics": {
+            "required": true,
+            "type": "string"
+        },
+        "sort": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "max_results": {
+            "type": "integer"
+        }
+    }
+}

@@ -1,0 +1,227 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "remarketingAudienceId": {
+            "required": true,
+            "type": "string"
+        },
+        "webPropertyId": {
+            "required": true,
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "JSON template for an Analytics remarketing audience.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID to which this remarketing audience belongs.",
+                    "type": "string"
+                },
+                "audienceDefinition": {
+                    "description": "The simple audience definition that will cause a user to be added to an audience.",
+                    "properties": {
+                        "includeConditions": {
+                            "description": "Defines the conditions to include users to the audience.",
+                            "properties": {
+                                "daysToLookBack": {
+                                    "description": "The look-back window lets you specify a time frame for evaluating the behavior that qualifies users for your audience. For example, if your filters include users from Central Asia, and Transactions Greater than 2, and you set the look-back window to 14 days, then any user from Central Asia whose cumulative transactions exceed 2 during the last 14 days is added to the audience.",
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "isSmartList": {
+                                    "description": "Boolean indicating whether this segment is a smart list. https://support.google.com/analytics/answer/4628577",
+                                    "type": "boolean"
+                                },
+                                "kind": {
+                                    "default": "analytics#includeConditions",
+                                    "description": "Resource type for include conditions.",
+                                    "type": "string"
+                                },
+                                "membershipDurationDays": {
+                                    "description": "Number of days (in the range 1 to 540) a user remains in the audience.",
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "segment": {
+                                    "description": "The segment condition that will cause a user to be added to an audience.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "audienceType": {
+                    "description": "The type of audience, either SIMPLE or STATE_BASED.",
+                    "type": "string"
+                },
+                "created": {
+                    "description": "Time this remarketing audience was created.",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "description": {
+                    "description": "The description of this remarketing audience.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Remarketing Audience ID.",
+                    "type": "string"
+                },
+                "internalWebPropertyId": {
+                    "description": "Internal ID for the web property to which this remarketing audience belongs.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "analytics#remarketingAudience",
+                    "description": "Collection type.",
+                    "type": "string"
+                },
+                "linkedAdAccounts": {
+                    "description": "The linked ad accounts associated with this remarketing audience. A remarketing audience can have only one linkedAdAccount currently.",
+                    "items": {
+                        "description": "JSON template for an Analytics Remarketing Audience Foreign Link.",
+                        "properties": {
+                            "accountId": {
+                                "description": "Account ID to which this linked foreign account belongs.",
+                                "type": "string"
+                            },
+                            "eligibleForSearch": {
+                                "description": "Boolean indicating whether this is eligible for search.",
+                                "readOnly": true,
+                                "type": "boolean"
+                            },
+                            "id": {
+                                "description": "Entity ad account link ID.",
+                                "type": "string"
+                            },
+                            "internalWebPropertyId": {
+                                "description": "Internal ID for the web property to which this linked foreign account belongs.",
+                                "readOnly": true,
+                                "type": "string"
+                            },
+                            "kind": {
+                                "default": "analytics#linkedForeignAccount",
+                                "description": "Resource type for linked foreign account.",
+                                "type": "string"
+                            },
+                            "linkedAccountId": {
+                                "description": "The foreign account ID. For example the an Google Ads `linkedAccountId` has the following format XXX-XXX-XXXX.",
+                                "type": "string"
+                            },
+                            "remarketingAudienceId": {
+                                "description": "Remarketing audience ID to which this linked foreign account belongs.",
+                                "type": "string"
+                            },
+                            "status": {
+                                "description": "The status of this foreign account link.",
+                                "type": "string"
+                            },
+                            "type": {
+                                "description": "The type of the foreign account. For example, `ADWORDS_LINKS`, `DBM_LINKS`, `MCC_LINKS` or `OPTIMIZE`.",
+                                "type": "string"
+                            },
+                            "webPropertyId": {
+                                "description": "Web property ID of the form UA-XXXXX-YY to which this linked foreign account belongs.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "linkedViews": {
+                    "description": "The views (profiles) that this remarketing audience is linked to.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "description": "The name of this remarketing audience.",
+                    "type": "string"
+                },
+                "stateBasedAudienceDefinition": {
+                    "description": "A state based audience definition that will cause a user to be added or removed from an audience.",
+                    "properties": {
+                        "excludeConditions": {
+                            "description": "Defines the conditions to exclude users from the audience.",
+                            "properties": {
+                                "exclusionDuration": {
+                                    "description": "Whether to make the exclusion TEMPORARY or PERMANENT.",
+                                    "type": "string"
+                                },
+                                "segment": {
+                                    "description": "The segment condition that will cause a user to be removed from an audience.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "includeConditions": {
+                            "description": "Defines the conditions to include users to the audience.",
+                            "properties": {
+                                "daysToLookBack": {
+                                    "description": "The look-back window lets you specify a time frame for evaluating the behavior that qualifies users for your audience. For example, if your filters include users from Central Asia, and Transactions Greater than 2, and you set the look-back window to 14 days, then any user from Central Asia whose cumulative transactions exceed 2 during the last 14 days is added to the audience.",
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "isSmartList": {
+                                    "description": "Boolean indicating whether this segment is a smart list. https://support.google.com/analytics/answer/4628577",
+                                    "type": "boolean"
+                                },
+                                "kind": {
+                                    "default": "analytics#includeConditions",
+                                    "description": "Resource type for include conditions.",
+                                    "type": "string"
+                                },
+                                "membershipDurationDays": {
+                                    "description": "Number of days (in the range 1 to 540) a user remains in the audience.",
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "segment": {
+                                    "description": "The segment condition that will cause a user to be added to an audience.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "updated": {
+                    "description": "Time this remarketing audience was last modified.",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "webPropertyId": {
+                    "description": "Web property ID of the form UA-XXXXX-YY to which this remarketing audience belongs.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

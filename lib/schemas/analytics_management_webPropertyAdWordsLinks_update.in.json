@@ -1,0 +1,120 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "webPropertyAdWordsLinkId": {
+            "required": true,
+            "type": "string"
+        },
+        "webPropertyId": {
+            "required": true,
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": false
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "JSON template for Analytics Entity Google Ads Link.",
+            "properties": {
+                "adWordsAccounts": {
+                    "description": "A list of Google Ads client accounts. These cannot be MCC accounts. This field is required when creating a Google Ads link. It cannot be empty.",
+                    "items": {
+                        "description": "JSON template for an Google Ads account.",
+                        "properties": {
+                            "autoTaggingEnabled": {
+                                "description": "True if auto-tagging is enabled on the Google Ads account. Read-only after the insert operation.",
+                                "type": "boolean"
+                            },
+                            "customerId": {
+                                "description": "Customer ID. This field is required when creating a Google Ads link.",
+                                "type": "string"
+                            },
+                            "kind": {
+                                "default": "analytics#adWordsAccount",
+                                "description": "Resource type for Google Ads account.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "entity": {
+                    "description": "Web property being linked.",
+                    "properties": {
+                        "webPropertyRef": {
+                            "description": "JSON template for a web property reference.",
+                            "properties": {
+                                "accountId": {
+                                    "description": "Account ID to which this web property belongs.",
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "description": "Link for this web property.",
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "description": "Web property ID of the form UA-XXXXX-YY.",
+                                    "type": "string"
+                                },
+                                "internalWebPropertyId": {
+                                    "description": "Internal ID for this web property.",
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "default": "analytics#webPropertyRef",
+                                    "description": "Analytics web property reference.",
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "description": "Name of this web property.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "description": "Entity Google Ads link ID",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "analytics#entityAdWordsLink",
+                    "description": "Resource type for entity Google Ads link.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of the link. This field is required when creating a Google Ads link.",
+                    "type": "string"
+                },
+                "profileIds": {
+                    "description": "IDs of linked Views (Profiles) represented as strings.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "selfLink": {
+                    "description": "URL link for this Google Analytics - Google Ads link.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
